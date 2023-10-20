@@ -12,7 +12,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: version
         with:
-          cmd: 'jq .version package.json -r'
+          cmd: 'jq .version composer.json -r'
       
       - name: Show my version
         run: 'echo "version ${{ steps.version.outputs.value }}"'
