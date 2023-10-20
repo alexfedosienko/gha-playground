@@ -9,12 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: Checkout
-  
-      - name: Extract version from composer.json
+
+      - name: Extract version from app/composer.json
         uses: sergeysova/jq-action@v2
         id: version
         with:
-          cmd: 'jq .version composer.json -r'
-      
+          cmd: "jq .version app/composer.json -r"
+
       - name: Show my version
         run: 'echo "version ${{ steps.version.outputs.value }}"'
